@@ -7,16 +7,19 @@ export default function Team() {
       name: "Ibitayo Akinkuolie",
       role: "Partner",
       bio: "Commercially astute legal practitioner with extensive experience in litigation, banking, and financial services. Strategic thinker with proven courtroom expertise and solution-driven approach.",
+      image: "/images/ibitayo.jpg",
     },
     {
       name: "Rachel Michael",
       role: "Associate",
       bio: "Expert in corporate law, contract negotiations, and business advisory. Brings deep knowledge in commercial transactions and regulatory compliance matters.",
+      image: "/images/rachel.png",
     },
     {
       name: "Morayo Ogunba",
       role: "Secretary",
       bio: "Efficient administrative professional ensuring smooth operations and excellent client service. Maintains highest standards of confidentiality and professionalism.",
+      image: "/images/morayo.jpg",
     },
   ]
 
@@ -38,11 +41,12 @@ export default function Team() {
           <div className="grid md:grid-cols-3 gap-12">
             {team.map((member, index) => (
               <div key={index} className="group">
-                <div className="w-full h-80 bg-gradient-to-br from-accent/20 to-accent/5 rounded-lg mb-6 flex items-center justify-center border border-border/50">
-                  <div className="text-center text-muted-foreground opacity-40">
-                    <div className="text-4xl mb-2">👤</div>
-                    <p className="text-sm">{member.role}</p>
-                  </div>
+                <div className="w-full h-80 bg-gradient-to-br from-accent/20 to-accent/5 rounded-lg mb-6 overflow-hidden border border-border/50">
+                  <img
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <h3 className="text-2xl font-light mb-1 group-hover:text-accent transition-colors">{member.name}</h3>
                 <p className="text-accent font-light text-sm mb-4">{member.role}</p>

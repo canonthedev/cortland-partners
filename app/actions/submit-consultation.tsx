@@ -56,6 +56,12 @@ export async function submitConsultation(formData: {
       return { success: false, error: "Failed to submit consultation. Please try again." }
     }
 
+    console.log("[v0] Consultation saved to database:", data)
+
+    // Server-side debug logging
+    console.log("[v0] Server Action - SMTP_HOST:", process.env.SMTP_HOST)
+    console.log("[v0] Server Action - SMTP_FROM_EMAIL:", process.env.SMTP_FROM_EMAIL)
+
     // Send emails via Nodemailer
     try {
       await sendConsultationEmails(formData)
@@ -82,33 +88,49 @@ async function sendConsultationEmails(formData: {
   legalMatter: string
   message: string
 }) {
-  const zohoUser = process.env.ZOHO_SMTP_USER
-  const zohoPass = process.env.ZOHO_SMTP_PASSWORD
-  const zohoHost = process.env.ZOHO_SMTP_HOST
-  const zohoPort = process.env.ZOHO_SMTP_PORT
+  const smtpHost = process.env.SMTP_HOST
+  const smtpPort = Number.parseInt(process.env.SMTP_PORT || "465")
+  const smtpSecure = process.env.SMTP_SECURE === "true"
+  const smtpUser = process.env.SMTP_USER
+  const smtpPass = process.env.SMTP_PASS
+  const smtpFromEmail = process.env.SMTP_FROM_EMAIL
+  const cortlandEmail = process.env.CORTLAND_EMAIL
 
-  // If Zoho credentials are not configured, log and return gracefully
-  if (!zohoUser || !zohoPass || !zohoHost || !zohoPort) {
+  console.log("[v0] SMTP Config Check:", {
+    hasHost: !!smtpHost,
+    hasPort: !!smtpPort,
+    hasUser: !!smtpUser,
+    hasPass: !!smtpPass,
+    hasFromEmail: !!smtpFromEmail,
+  })
+
+  // If SMTP credentials are not configured, log and return gracefully
+  if (!smtpHost || !smtpUser || !smtpPass || !smtpFromEmail) {
     console.warn(
-      "[v0] Zoho SMTP not configured. Consultation saved but emails not sent. Please configure: ZOHO_SMTP_USER, ZOHO_SMTP_PASSWORD, ZOHO_SMTP_HOST, ZOHO_SMTP_PORT",
+      "[v0] SMTP not configured. Consultation saved but emails not sent. Please configure: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM_EMAIL",
     )
     return
   }
 
-  const zohoEmail = zohoUser
-  const firmEmail = process.env.CORTLAND_EMAIL || zohoUser
+  if (process.env.NODE_ENV !== "production") {
+    console.log("[v0] Skipping email in preview environment. Emails will be sent when deployed to Vercel.")
+    return
+  }
+
+  const firmEmail = cortlandEmail || smtpFromEmail
 
   let transporter
   try {
     transporter = nodemailer.createTransport({
-      host: zohoHost,
-      port: Number.parseInt(zohoPort),
-      secure: true,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
       auth: {
-        user: zohoUser,
-        pass: zohoPass,
+        user: smtpUser,
+        pass: smtpPass,
       },
     })
+    console.log("[v0] Nodemailer transporter created successfully")
   } catch (error) {
     console.error("[v0] Failed to create Nodemailer transporter:", error)
     return
@@ -165,7 +187,7 @@ async function sendConsultationEmails(formData: {
 
   try {
     await transporter.sendMail({
-      from: zohoEmail,
+      from: smtpFromEmail,
       to: firmEmail,
       subject: `New Consultation Request from ${formData.firstName} ${formData.lastName}`,
       html: firmEmailHtml,
@@ -177,7 +199,7 @@ async function sendConsultationEmails(formData: {
 
   try {
     await transporter.sendMail({
-      from: zohoEmail,
+      from: smtpFromEmail,
       to: formData.email,
       subject: "Consultation Request Received - Cortland Partners",
       html: clientEmailHtml,
