@@ -1,7 +1,5 @@
 "use server"
 
-import { createServerClient } from "@supabase/ssr"
-import { cookies } from "next/headers"
 import nodemailer from "nodemailer"
 
 export async function submitConsultation(formData: {
@@ -13,62 +11,8 @@ export async function submitConsultation(formData: {
   message: string
 }) {
   try {
-    const cookieStore = await cookies()
-
-    // Create Supabase client with service role for server actions
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-      process.env.SUPABASE_SERVICE_ROLE_KEY || "",
-      {
-        cookies: {
-          getAll() {
-            return cookieStore.getAll()
-          },
-          setAll(cookiesToSet) {
-            try {
-              cookiesToSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options))
-            } catch {
-              // Handle cookie setting errors silently
-            }
-          },
-        },
-      },
-    )
-
-    // Insert consultation into database
-    const { data, error } = await supabase
-      .from("consultations")
-      .insert([
-        {
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          legal_matter: formData.legalMatter,
-          message: formData.message,
-          status: "pending",
-        },
-      ])
-      .select()
-
-    if (error) {
-      console.error("[v0] Supabase error:", error)
-      return { success: false, error: "Failed to submit consultation. Please try again." }
-    }
-
-    console.log("[v0] Consultation saved to database:", data)
-
-    // Server-side debug logging
-    console.log("[v0] Server Action - SMTP_HOST:", process.env.SMTP_HOST)
-    console.log("[v0] Server Action - SMTP_FROM_EMAIL:", process.env.SMTP_FROM_EMAIL)
-
     // Send emails via Nodemailer
-    try {
-      await sendConsultationEmails(formData)
-    } catch (emailError) {
-      console.error("[v0] Email error:", emailError)
-      // Don't fail the submission if email fails
-    }
+    await sendConsultationEmails(formData)
 
     return {
       success: true,
@@ -152,7 +96,7 @@ async function sendConsultationEmails(formData: {
       </p>
       <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
       <p style="font-size: 12px; color: #666;">
-        This consultation request has been automatically stored in your Supabase database for tracking and follow-up.
+        Submission received on ${new Date().toLocaleString()}
       </p>
     </div>
   `

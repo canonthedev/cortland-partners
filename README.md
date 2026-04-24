@@ -7,7 +7,7 @@ A modern, minimalistic website for Cortland Partners, a leading law firm in Nige
 - **Responsive Design**: Mobile-first approach with elegant minimalistic layout
 - **Dark Mode**: Toggle between light and dark themes with smooth transitions
 - **Multi-page Structure**: Organized pages for Home, About, Services, Team, and Contact
-- **Consultation Form**: Integrated form with Supabase database storage and Zoho SMTP email notifications
+- **Consultation Form**: Integrated form with email notifications via Nodemailer
 - **Modern UI**: Built with Next.js 15, React 19, and Tailwind CSS
 - **Professional Navigation**: Clean header with mobile menu support
 
@@ -23,31 +23,34 @@ A modern, minimalistic website for Cortland Partners, a leading law firm in Nige
 
 - **Frontend**: Next.js 15, React 19, TypeScript
 - **Styling**: Tailwind CSS, dark mode with next-themes
-- **Database**: Supabase (PostgreSQL)
-- **Email Service**: Zoho SMTP via Nodemailer
+- **Email Service**: Nodemailer (SMTP)
 - **UI Components**: Radix UI, Shadcn/UI
 - **Icons**: Lucide React
 
 ## Environment Variables
 
-Required environment variables:
+Required environment variables for email functionality:
 
 \`\`\`
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-ZOHO_SMTP_HOST=smtp.zoho.com
-ZOHO_SMTP_PORT=465
-ZOHO_SMTP_USER=your_zoho_email@yourdomain.com
-ZOHO_SMTP_PASSWORD=your_zoho_app_password
+SMTP_HOST=your_smtp_host
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=your_email@yourdomain.com
+SMTP_PASS=your_email_password_or_app_password
+SMTP_FROM_EMAIL=your_email@yourdomain.com
 CORTLAND_EMAIL=info@cortlandpartnersng.com
 \`\`\`
 
-### How to Get Zoho App Password:
+### Email Provider Setup:
+For Zoho Mail:
 1. Log in to your Zoho Mail account
 2. Go to Settings → Security → App Passwords
-3. Generate a new app password for "Nodemailer" or your app
-4. Use this password (NOT your regular password) in `ZOHO_SMTP_PASSWORD`
+3. Generate a new app password
+4. Use these values in the SMTP environment variables
+
+For other providers (Gmail, Outlook, etc.):
+- Use your email provider's SMTP settings
+- For Gmail: Use app-specific password with 2FA enabled
 
 ## Setup & Installation
 
@@ -63,13 +66,10 @@ CORTLAND_EMAIL=info@cortlandpartnersng.com
    \`\`\`
 
 3. **Set up environment variables**
-   - Add the required environment variables in your Vercel project settings
-   - For Zoho SMTP, generate an app password in your Zoho account
+   - Add the SMTP environment variables in your Vercel project settings (or `.env.local` for local development)
+   - Configure your email provider (Zoho, Gmail, etc.) SMTP credentials
 
-4. **Create database schema**
-   - Run the migration script in the `/scripts` folder to create the consultations table
-
-5. **Run development server**
+4. **Run development server**
    \`\`\`bash
    npm run dev
    \`\`\`
@@ -81,7 +81,7 @@ CORTLAND_EMAIL=info@cortlandpartnersng.com
 
 1. Push your code to GitHub
 2. Connect your repository to Vercel
-3. Add all environment variables (Supabase + Zoho SMTP) in Vercel project settings
+3. Add all SMTP environment variables in Vercel project settings
 4. Deploy with a single click
 
 \`\`\`bash
@@ -90,42 +90,24 @@ vercel deploy
 
 ## How the Consultation Form Works
 
-The consultation form has a complete flow:
+The consultation form has a complete email flow:
 
 1. **Client Submits Form**: User fills out the consultation form on the Contact page
-2. **Data Stored**: Submission is saved to Supabase database for tracking and follow-up
-3. **Firm Notification**: Firm receives email with full inquiry details via Zoho SMTP
-4. **Client Confirmation**: Client receives confirmation email via Zoho SMTP
-5. **Manual Follow-up**: Firm staff access the Supabase dashboard to manage consultations
+2. **Firm Notification**: Firm receives email with full inquiry details (name, contact info, legal matter, message)
+3. **Client Confirmation**: Client receives confirmation email acknowledging receipt of their inquiry
+4. **Expected Response**: Firm follows up with client within 24 hours
 
-Emails are sent directly from your Zoho domain email address, ensuring professional branding and better deliverability.
+Emails are sent from your configured SMTP email address, ensuring professional branding and reliable delivery.
 
-## Database Schema
+## Email Notifications
 
-### Consultations Table
-\`\`\`sql
-CREATE TABLE consultations (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  first_name VARCHAR(255) NOT NULL,
-  last_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  phone VARCHAR(20),
-  legal_matter VARCHAR(255),
-  message TEXT,
-  status VARCHAR(50) DEFAULT 'pending',
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-\`\`\`
-
-## Email Integration with Zoho SMTP
-
-The consultation form uses Zoho SMTP for reliable email delivery directly from your domain:
+The consultation form sends two emails automatically:
 
 ### Client Receives:
 - Immediate confirmation of their consultation request
 - Reference details of their inquiry
 - Expected contact timeline (within 24 hours)
+- Firm contact information
 
 ### Firm Receives:
 - Complete inquiry details including client contact information
@@ -133,7 +115,7 @@ The consultation form uses Zoho SMTP for reliable email delivery directly from y
 - Full message content
 - Timestamp for organization and follow-up
 
-All emails are sent from your Zoho domain email address with professional formatting.
+All emails are sent from your configured SMTP email address with professional formatting.
 
 ## Dark Mode
 
