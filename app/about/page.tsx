@@ -44,10 +44,9 @@ export default function About() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-balance">About Cortland Partners</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl">
-            A full-service law firm dedicated to providing exceptional legal services to Nigeria's leading
-            organizations.
+          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-balance">About Cortland Partners NG – Law Firm in Lagos, Nigeria</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl">
+            Cortland Partners NG is a professional full-service law firm based in Lagos, Nigeria, dedicated to providing exceptional legal services to Nigeria's leading organizations, corporations, and individuals. With 15+ experienced legal professionals, we specialize in corporate law, real estate, litigation, and business advisory.
           </p>
         </div>
       </section>
@@ -108,15 +107,45 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Why Choose Us */}
       <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-light mb-12">Why Choose Cortland Partners NG?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-8 bg-muted/30 border border-border rounded-lg">
+              <h3 className="text-xl font-light mb-4">Experience & Expertise</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Our team includes seasoned lawyers with deep expertise in corporate law, real estate, litigation, and regulatory compliance. We serve Nigeria's leading corporations and financial institutions.
+              </p>
+            </div>
+            <div className="p-8 bg-muted/30 border border-border rounded-lg">
+              <h3 className="text-xl font-light mb-4">Client-Focused Approach</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We listen carefully to understand your needs and provide tailored legal solutions. Regular communication and transparency are at the core of how we work with our clients.
+              </p>
+            </div>
+            <div className="p-8 bg-muted/30 border border-border rounded-lg">
+              <h3 className="text-xl font-light mb-4">Results-Driven Service</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We're committed to delivering practical, strategic legal advice that protects your interests and achieves your goals. Your success is our success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-light mb-6">Ready to work with us?</h2>
+          <h2 className="text-4xl font-light mb-6">Ready to work with experienced lawyers in Lagos?</h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Contact Cortland Partners NG today for a free consultation. We'll discuss your legal needs and how we can help achieve your goals.
+          </p>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-3 bg-accent text-black font-medium rounded-sm hover:bg-accent/90 transition-colors"
           >
-            Schedule a Consultation
+            Schedule a Free Consultation
           </Link>
         </div>
       </section>

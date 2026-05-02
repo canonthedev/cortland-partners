@@ -28,13 +28,20 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-balance">
-                Premier Legal Services for Nigeria's Leading Organizations
+                Law Firm in Lagos – Trusted Legal Services for Corporate & Property Law
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Cortland Partners is a leading law firm comprised of dynamic and highly skilled legal professionals.
-                Headquartered in Yaba, Lagos, with a network of over 15 seasoned legal practitioners across Nigeria and
-                the United Kingdom.
+                Cortland Partners NG is a leading full-service law firm in Lagos, Nigeria, comprised of dynamic and highly skilled legal professionals. Headquartered in Yaba, Lagos, we have a network of over 15 seasoned legal practitioners across Nigeria and the United Kingdom, delivering expert guidance on corporate law, litigation, property law, and comprehensive business advisory services.
               </p>
+              <div className="mb-6 p-4 bg-muted/30 rounded-lg border border-border">
+                <p className="text-sm font-medium mb-2">Why Choose Cortland Partners NG?</p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>✓ 15+ experienced legal professionals</li>
+                  <li>✓ Expertise in corporate law, real estate, and litigation</li>
+                  <li>✓ Trusted by Nigeria's leading corporations and financial institutions</li>
+                  <li>✓ Free initial legal consultation</li>
+                </ul>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
@@ -99,18 +106,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* About Section */}
       <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-light mb-8">Professional Law Firm in Lagos, Nigeria</h2>
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Cortland Partners NG is a professional law firm dedicated to providing exceptional legal services across Nigeria. Based in Lagos, we specialize in corporate law, real estate legal services, litigation, and comprehensive business advisory. Our team of experienced lawyers works with Nigeria's leading corporations, financial institutions, and individuals to navigate complex legal matters.
+              </p>
+              <p>
+                We are privileged to act as external solicitors to several corporate and financial clients, including leading commercial banks, where we routinely advise on debt recovery, regulatory compliance, and dispute resolution. Our expertise spans civil and criminal litigation, corporate advisory, financial services regulation, estate administration, real estate transactions, and international law matters.
+              </p>
+              <p>
+                Whether you need legal support for corporate transactions, property disputes, litigation, or business advisory, Cortland Partners NG provides reliable, ethical, and result-driven legal guidance. We pride ourselves on transparent communication, ethical standards, and delivering exceptional outcomes for our clients.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-light mb-6">Our Key Practice Areas</h3>
+              <div className="space-y-3">
+                <div className="flex gap-3">
+                  <CheckCircle size={20} className="text-accent flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium">Corporate & Commercial Law</p>
+                    <p className="text-sm text-muted-foreground">Business advisory, contracts, and corporate governance</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle size={20} className="text-accent flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium">Real Estate & Property Law</p>
+                    <p className="text-sm text-muted-foreground">Property transactions and real estate disputes</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle size={20} className="text-accent flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium">Litigation & Dispute Resolution</p>
+                    <p className="text-sm text-muted-foreground">Civil and criminal litigation, arbitration, mediation</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle size={20} className="text-accent flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium">Financial Services Regulation</p>
+                    <p className="text-sm text-muted-foreground">Compliance and regulatory advisory for financial institutions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-light mb-6 text-balance">Ready to discuss your legal needs?</h2>
+          <h2 className="text-4xl font-light mb-6 text-balance">Need expert legal guidance in Lagos?</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Contact Cortland Partners today for a free consultation with one of our experienced attorneys.
+            Cortland Partners NG offers a free initial consultation with experienced attorneys. We'll discuss your legal needs and provide professional advice tailored to your situation.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-3 bg-accent text-black font-medium rounded-sm hover:bg-accent/90 transition-colors"
           >
-            Request Consultation
+            Request Free Consultation
           </Link>
         </div>
       </section>
