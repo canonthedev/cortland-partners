@@ -1,5 +1,19 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Our Team | Experienced Lawyers in Lagos | Cortland Partners NG",
+  description:
+    "Meet the experienced legal professionals at Cortland Partners NG. Our team includes expert attorneys in corporate law, litigation, and business advisory.",
+  keywords: ["lawyers Lagos", "legal professionals Nigeria", "experienced attorneys", "law firm team"],
+  openGraph: {
+    title: "Our Team | Experienced Lawyers in Lagos | Cortland Partners NG",
+    description:
+      "Meet the experienced legal professionals at Cortland Partners NG. Our team includes expert attorneys in corporate law, litigation, and business advisory.",
+    type: "website",
+  },
+}
 
 export default function Team() {
   const team = [

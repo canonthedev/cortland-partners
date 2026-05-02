@@ -1,5 +1,19 @@
 import { CheckCircle, Award, Users, Heart } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About Cortland Partners NG | Professional Law Firm Lagos",
+  description:
+    "Learn about Cortland Partners NG, a full-service law firm in Lagos with 15+ legal professionals. We specialize in corporate law, litigation, and real estate legal services.",
+  keywords: ["about law firm", "Cortland Partners", "legal firm Lagos", "corporate lawyers Nigeria"],
+  openGraph: {
+    title: "About Cortland Partners NG | Professional Law Firm Lagos",
+    description:
+      "Learn about Cortland Partners NG, a full-service law firm in Lagos with 15+ legal professionals. We specialize in corporate law, litigation, and real estate legal services.",
+    type: "website",
+  },
+}
 
 export default function About() {
   const values = [

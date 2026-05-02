@@ -2,6 +2,20 @@
 import { Phone, Mail, MapPin } from "lucide-react"
 import { useState, useEffect } from "react"
 import ConsultationForm from "@/components/consultation-form"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contact Cortland Partners NG | Schedule Legal Consultation",
+  description:
+    "Contact Cortland Partners NG in Lagos. Free legal consultation available. Call +234 814 794 0885 or email info@cortlandpartnersng.com.",
+  keywords: ["contact law firm", "legal consultation Lagos", "Cortland Partners contact", "schedule consultation"],
+  openGraph: {
+    title: "Contact Cortland Partners NG | Schedule Legal Consultation",
+    description:
+      "Contact Cortland Partners NG in Lagos. Free legal consultation available. Call +234 814 794 0885 or email info@cortlandpartnersng.com.",
+    type: "website",
+  },
+}
 
 export default function Contact() {
   const [mounted, setMounted] = useState(false)
