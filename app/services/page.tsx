@@ -72,15 +72,25 @@ export default function Services() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-balance">Our Services</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl">
-            Comprehensive legal services across multiple practice areas, tailored to meet your specific needs.
+          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-balance">Legal Services in Lagos – Corporate Law, Real Estate & Litigation</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl">
+            Cortland Partners NG provides comprehensive legal services across corporate law, real estate, litigation, and business advisory. Our experienced lawyers in Lagos serve individual clients, corporations, and financial institutions with tailored legal solutions.
+          </p>
+        </div>
+      </section>
+
+      {/* Introduction */}
+      <section className="py-24 px-6 border-t border-border bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-light mb-6">Expert Legal Solutions Across Multiple Practice Areas</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mb-8 leading-relaxed">
+            At Cortland Partners NG, we understand that every client's legal needs are unique. Whether you're facing a complex corporate transaction, property dispute, or need litigation support, our team of skilled attorneys brings years of experience and proven expertise. We're committed to providing practical, strategic legal advice that protects your interests and achieves your goals.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 px-6 border-t border-border">
+      <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             {services.map((service, index) => (
@@ -97,17 +107,17 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-light mb-6">Need legal assistance?</h2>
+          <h2 className="text-4xl font-light mb-6">Which service is right for you?</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Contact our team to discuss which service best suits your legal needs.
+            Every legal matter is unique. Our experienced attorneys at Cortland Partners NG will work with you to understand your situation and provide tailored legal advice. Contact us today for a free initial consultation with one of our lawyers in Lagos.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-3 bg-accent text-black font-medium rounded-sm hover:bg-accent/90 transition-colors"
           >
-            Get in Touch <ArrowRight size={18} className="ml-2" />
+            Schedule Your Free Consultation <ArrowRight size={18} className="ml-2" />
           </Link>
         </div>
       </section>
