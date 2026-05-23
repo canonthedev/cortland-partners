@@ -7,11 +7,15 @@ export const metadata: Metadata = {
   description:
     "Learn about Cortland Partners NG, a full-service law firm in Lagos with 15+ legal professionals. We specialize in corporate law, litigation, and real estate legal services.",
   keywords: ["about law firm", "Cortland Partners", "legal firm Lagos", "corporate lawyers Nigeria"],
+  alternates: {
+    canonical: "https://www.cortlandpartnersng.com/about",
+  },
   openGraph: {
     title: "About Cortland Partners NG | Professional Law Firm Lagos",
     description:
       "Learn about Cortland Partners NG, a full-service law firm in Lagos with 15+ legal professionals. We specialize in corporate law, litigation, and real estate legal services.",
     type: "website",
+    url: "https://www.cortlandpartnersng.com/about",
   },
 }
 

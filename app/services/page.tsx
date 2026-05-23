@@ -7,11 +7,15 @@ export const metadata: Metadata = {
   description:
     "Professional legal services including corporate law, litigation, property law, estate administration, and more. Trusted by Nigeria's leading corporations.",
   keywords: ["legal services Lagos", "corporate law Nigeria", "litigation services", "real estate law", "estate administration"],
+  alternates: {
+    canonical: "https://www.cortlandpartnersng.com/services",
+  },
   openGraph: {
     title: "Legal Services | Corporate Law, Litigation, Real Estate | Cortland Partners NG",
     description:
       "Professional legal services including corporate law, litigation, property law, estate administration, and more. Trusted by Nigeria's leading corporations.",
     type: "website",
+    url: "https://www.cortlandpartnersng.com/services",
   },
 }
 
