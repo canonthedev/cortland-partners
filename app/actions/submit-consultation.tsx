@@ -2,6 +2,34 @@
 
 import nodemailer from "nodemailer"
 
+// Simple in-memory rate limiter (per IP/session)
+const submissionAttempts = new Map<string, { count: number; timestamp: number }>()
+
+function checkRateLimit(identifier: string, maxAttempts: number = 3, windowMs: number = 3600000): boolean {
+  const now = Date.now()
+  const userAttempts = submissionAttempts.get(identifier)
+
+  if (!userAttempts) {
+    submissionAttempts.set(identifier, { count: 1, timestamp: now })
+    return true
+  }
+
+  // Reset counter if time window has passed
+  if (now - userAttempts.timestamp > windowMs) {
+    submissionAttempts.set(identifier, { count: 1, timestamp: now })
+    return true
+  }
+
+  // Check if max attempts exceeded
+  if (userAttempts.count >= maxAttempts) {
+    return false
+  }
+
+  // Increment counter
+  userAttempts.count++
+  return true
+}
+
 export async function submitConsultation(formData: {
   firstName: string
   lastName: string
@@ -11,6 +39,25 @@ export async function submitConsultation(formData: {
   message: string
 }) {
   try {
+    // Rate limiting using email as identifier
+    const rateLimitKey = `consultation_${formData.email.toLowerCase()}`
+    if (!checkRateLimit(rateLimitKey, 3, 3600000)) {
+      console.warn(`[v0] Rate limit exceeded for ${formData.email}`)
+      return {
+        success: false,
+        error: "Too many submission attempts. Please try again in 1 hour.",
+      }
+    }
+
+    // Basic validation to catch obvious spam
+    if (formData.message.length < 10) {
+      console.warn("[v0] Message too short - likely spam")
+      return {
+        success: false,
+        error: "Please provide a detailed description of your legal matter.",
+      }
+    }
+
     // Send emails via Nodemailer
     await sendConsultationEmails(formData)
 

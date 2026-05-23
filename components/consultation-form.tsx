@@ -20,6 +20,7 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
     phone: "",
     legalMatter: "",
     message: "",
+    website: "", // Honeypot field - bots will fill this
   })
   const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
@@ -34,6 +35,18 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Bot protection: Check honeypot field
+    if (formData.website) {
+      console.log("[v0] Honeypot field filled - likely bot submission")
+      toast({
+        title: "Error",
+        description: "Invalid form submission detected",
+        variant: "destructive",
+      })
+      return
+    }
+
     setIsLoading(true)
 
     try {
@@ -52,6 +65,7 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
           phone: "",
           legalMatter: "",
           message: "",
+          website: "",
         })
       } else {
         toast({
@@ -88,6 +102,17 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Honeypot field - hidden from users but catches bots */}
+          <input
+            type="text"
+            name="website"
+            value={formData.website}
+            onChange={handleInputChange}
+            style={{ display: "none" }}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label

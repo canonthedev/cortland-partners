@@ -7,11 +7,15 @@ export const metadata: Metadata = {
   description:
     "Meet the experienced legal professionals at Cortland Partners NG. Our team includes expert attorneys in corporate law, litigation, and business advisory.",
   keywords: ["lawyers Lagos", "legal professionals Nigeria", "experienced attorneys", "law firm team"],
+  alternates: {
+    canonical: "https://www.cortlandpartnersng.com/team",
+  },
   openGraph: {
     title: "Our Team | Experienced Lawyers in Lagos | Cortland Partners NG",
     description:
       "Meet the experienced legal professionals at Cortland Partners NG. Our team includes expert attorneys in corporate law, litigation, and business advisory.",
     type: "website",
+    url: "https://www.cortlandpartnersng.com/team",
   },
 }
 

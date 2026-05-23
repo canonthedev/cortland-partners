@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     description:
       "Cortland Partners NG is a professional law firm in Lagos, Nigeria offering corporate law, real estate legal services, and business advisory.",
     type: "website",
+    url: "https://www.cortlandpartnersng.com",
+  },
+  alternates: {
+    canonical: "https://www.cortlandpartnersng.com",
   },
 }
 
