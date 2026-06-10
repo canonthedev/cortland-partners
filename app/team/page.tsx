@@ -24,20 +24,20 @@ export default function Team() {
     {
       name: "Ibitayo Akinkuolie",
       role: "Partner",
-      bio: "Commercially astute legal practitioner with extensive experience in litigation, banking, and financial services. Strategic thinker with proven courtroom expertise and solution-driven approach.",
+      bio: "Ibitayo is a commercially astute lawyer with a strong focus on foreign investment, corporate advisory, and market entry strategy. He advises multinational corporations, investors, and high-growth businesses on establishing and structuring operations in Nigeria and across Africa, with particular emphasis on regulatory compliance, risk management, and commercial efficiency. He holds an LL.B. (Second Class Upper) from the University of Lagos and was called to the Nigerian Bar upon completion of the Nigerian Law School, Abuja.",
       image: "/images/ibitayo.jpg",
     },
     {
-      name: "Rachel Michael",
-      role: "Associate",
-      bio: "Expert in corporate law, contract negotiations, and business advisory. Brings deep knowledge in commercial transactions and regulatory compliance matters.",
+      name: "Rachael E. Michael",
+      role: "Senior Associate",
+      bio: "Rachael E. Michael is a Senior Associate at the Firm with about six (6) years legal experience across diverse fields.",
       image: "/images/rachel.png",
     },
     {
-      name: "Morayo Ogunba",
-      role: "Secretary",
-      bio: "Efficient administrative professional ensuring smooth operations and excellent client service. Maintains highest standards of confidentiality and professionalism.",
-      image: "/images/morayo.jpg",
+      name: "Adeyinka Binuyo",
+      role: "Partner",
+      bio: "Adeyinka has over a decade of experience in corporate law, dispute resolution, and regulatory compliance. He holds an LL.M. in International Commercial Law and an LL.B. from the University of Northampton, graduating with Second Class Upper Division Honors. He was called to the Nigerian Bar after completing the Nigerian Law School, Abuja. With experience at BA Law LLP and Kunle Fagbohunka & Co., he has successfully handled complex corporate matters, including commercial transactions, litigation, and regulatory compliance.",
+      image: "/images/adeyinka.jpg",
     },
   ]
 

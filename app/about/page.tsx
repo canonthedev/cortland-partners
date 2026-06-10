@@ -24,22 +24,22 @@ export default function About() {
     {
       icon: Award,
       title: "Delivering Excellence",
-      description: "High-quality, result-oriented services tailored to your unique legal needs",
+      description: "At Cortland Partners we pride ourselves with a culture for excellence, exhibited by our rigorous vetting and review protocol. Each legal brief entrusted to us undergoes a multi-tiered diagnostic process, ensuring flawless results and accuracy.",
     },
     {
       icon: Users,
       title: "Constant Communication",
-      description: "Regular updates and transparent dialogue on all matters",
+      description: "At the firm, communication is the cornerstone of our legal practice. We effectively bridge information gaps through regular status update letters, strategic meetings and detailed progress reports at every stage.",
     },
     {
       icon: CheckCircle,
       title: "Ethical Standards",
-      description: "Transparent billing practices with no hidden fees and strict anti-corruption policies",
+      description: "Our firm operates under a rigorous framework of professional integrity, ensuring that every brief is conducted with the highest level of transparency and fidelity to the law. We prioritize the avoidance of conflicts of interest and maintain strict confidentiality protocols.",
     },
     {
       icon: Heart,
       title: "Pro Bono Commitment",
-      description: "Significant pro bono work and free legal advice to underserved communities",
+      description: "Our commitment to the public good is a core pillar of our corporate identity. We maintain an active pro bono department dedicated to providing high-quality legal representation to indigent individuals and underserved communities.",
     },
   ]
 
@@ -63,18 +63,13 @@ export default function About() {
               <h2 className="text-4xl font-light mb-8">Who We Are</h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
-                  Cortland Partners is comprised of dynamic and highly skilled legal professionals dedicated to
-                  providing exceptional, reliable, and comprehensive legal services. Headquartered in Yaba, Lagos, we
-                  have a network of over 15 seasoned legal practitioners across Nigeria and the United Kingdom.
+                  Cortland Partners is an emerging full service law firm with its headquarters in Lagos State, Nigeria, comprising over fifteen (15) seasoned lawyers with in-depth knowledge spanning across diverse legal disciplines. The firm was established to address demanding and sophisticated legal requirements across sectors. We operate with a focus on delivering precise, statutory-led solutions across diverse fields spanning real estate, secured credit transactions, litigation, finance and corporate regulatory compliance, amongst others.
                 </p>
                 <p>
-                  We are privileged to act as external solicitors to several corporate and financial clients, including
-                  leading commercial banks, where we routinely advise on debt recovery, regulatory compliance, and
-                  dispute resolution.
+                  Our identity is defined by a commitment to structural rigor, where legal advisory is treated as a critical component of a client's commercial infrastructure. We prioritize the mitigation of long-term risk through meticulous drafting and a deep-seated mastery of the procedural frameworks, laws and governing regulatory bodies.
                 </p>
                 <p>
-                  Our expertise spans civil and criminal litigation, corporate advisory, financial services regulation,
-                  estate administration, real estate transactions, and international law matters.
+                  The firm's operational philosophy is centered on the pursuit of technical excellence and a rejection of professional stagnation. We maintain a high-pressure work environment designed to ensure that every brief is handled with a sense of urgency and analytical depth. At Cortland Partners, we act as strategic partners dedicated to the fortification of our clients' assets and the seamless navigation of complex jurisdictional requirements.
                 </p>
               </div>
             </div>
