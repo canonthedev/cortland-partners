@@ -24,7 +24,7 @@ export default function Team() {
     {
       name: "Ibitayo Akinkuolie",
       role: "Partner",
-      bio: "Ibitayo is a commercially astute lawyer with a strong focus on foreign investment, corporate advisory, and market entry strategy. He advises multinational corporations, investors, and high-growth businesses on establishing and structuring operations in Nigeria and across Africa, with particular emphasis on regulatory compliance, risk management, and commercial efficiency. He holds an LL.B. (Second Class Upper) from the University of Lagos and was called to the Nigerian Bar upon completion of the Nigerian Law School, Abuja.",
+      bio: "Ibitayo is a commercially astute lawyer with a strong focus on foreign investment, corporate advisory, and market entry strategy. He advises multinational corporations, investors, and high-growth businesses on establishing and structuring operations in Nigeria and across Africa, with particular emphasis on regulatory compliance, risk management, and commercial efficiency. He holds an LL.B. (Second Class Upper) from the University of Lagos and was called to the Nigerian Bar upon completion of the Nigerian Law School, Abuja.\n\nHis practice spans cross-border transactions across Africa, with a client base that includes businesses and investors from Ghana, Côte d'Ivoire, Gabon, and other key jurisdictions. He has extensive experience advising on company formation, corporate governance, and complex commercial contracting, as well as navigating the legal and regulatory frameworks applicable to inbound investments.\n\nIn addition to his advisory work, Ibitayo has significant litigation and dispute resolution experience, representing clients in commercial disputes, regulatory enforcement actions, and debt recovery matters before Nigerian courts. He has acted for financial institutions, corporate entities, and private clients in high-stakes disputes, skilled in developing litigation strategy, managing contentious proceedings, and achieving commercially viable outcomes.\n\nNotable Deals & Representations:\n• Advised on acquisition of a Ghanaian cocoa licensing company valued at GHS 1.5 million, including transaction structuring, due diligence support, and cross-border regulatory considerations.\n• Acted for a foreign investor in connection with a USD 3 million investment into Nigeria's real estate sector, providing end-to-end advisory on market entry, regulatory compliance, corporate structuring, and transactional documentation.\n• Represented financial institutions and corporate clients in debt recovery and commercial litigation matters, including enforcement of security interests and recovery of non-performing loans.\n• Acted in regulatory and compliance-related disputes, advising and representing clients in engagements with regulators.",
       image: "/images/ibitayo.jpg",
     },
     {
@@ -36,7 +36,7 @@ export default function Team() {
     {
       name: "Adeyinka Binuyo",
       role: "Partner",
-      bio: "Adeyinka has over a decade of experience in corporate law, dispute resolution, and regulatory compliance. He holds an LL.M. in International Commercial Law and an LL.B. from the University of Northampton, graduating with Second Class Upper Division Honors. He was called to the Nigerian Bar after completing the Nigerian Law School, Abuja. With experience at BA Law LLP and Kunle Fagbohunka & Co., he has successfully handled complex corporate matters, including commercial transactions, litigation, and regulatory compliance.",
+      bio: "Adeyinka has over a decade of experience in corporate law, dispute resolution, and regulatory compliance. He holds an LL.M. in International Commercial Law and an LL.B. from the University of Northampton, graduating with Second Class Upper Division Honors. He also holds a degree in Politics and International Relations from Lead City University, Ibadan.\n\nAdeyinka was called to the Nigerian Bar after completing the Nigerian Law School, Abuja. With experience at BA Law LLP and Kunle Fagbohunka & Co., he has successfully handled complex corporate matters, including commercial transactions, litigation, and regulatory compliance. He has worked extensively with businesses facing enforcement actions and has a strong track record of successfully negotiating settlements to reduce penalties.\n\nAdeyinka's ability to manage complex negotiations with regulatory bodies has earned him a reputation for delivering results while preserving client relationships.",
       image: "/placeholder.jpg",
     },
   ]
@@ -68,7 +68,11 @@ export default function Team() {
                 </div>
                 <h3 className="text-2xl font-light mb-1 group-hover:text-accent transition-colors">{member.name}</h3>
                 <p className="text-accent font-light text-sm mb-4">{member.role}</p>
-                <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
+                <div className="text-muted-foreground leading-relaxed space-y-3">
+                  {member.bio.split('\n').map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

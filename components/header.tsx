@@ -1,13 +1,22 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -22,10 +31,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div className="w-12 h-12 relative">
+          <div className={`relative transition-all duration-300 ${scrolled ? 'w-10 h-10' : 'w-12 h-12'}`}>
             <img src="/logo.png" alt="Cortland Partners" className="w-full h-full object-contain" />
           </div>
-          <span className="text-xl font-light tracking-wide hidden sm:block">Cortland Partners</span>
+          <span className={`font-light tracking-wide hidden sm:block transition-all duration-300 ${scrolled ? 'text-lg' : 'text-xl'}`}>Cortland Partners</span>
         </Link>
 
         {/* Desktop Navigation */}

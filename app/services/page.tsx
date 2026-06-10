@@ -22,52 +22,52 @@ export const metadata: Metadata = {
 export default function Services() {
   const services = [
     {
-      name: "Litigation (Civil & Criminal)",
-      description: "Comprehensive representation in disputes at all levels of court with proven courtroom expertise.",
+      name: "Litigation",
+      description: "Cortland Partners litigation practice is distinguished by its ability to provide legal advocacy with precision and directness. We specialize in navigating substantive law and intricate court procedural rules across jurisdictions to protect the structural and financial interests of our clients. We represent corporate entities, financial institutions, and private investors in a broad spectrum of contentious matters, including complex real estate litigation, enforcement of secured credit instruments, shareholder disputes and breach of contract claims.",
     },
     {
       name: "Corporate & Commercial Law",
-      description: "Advisory services for business transactions, corporate governance, and strategic planning.",
+      description: "Cortland Partners provides a comprehensive suite of corporate & commercial legal services designed to facilitate the seamless operation of business entities. We act as strategic advisors to diverse clients, offering guidance on company formation, governance, drafting of complex commercial agreements, contracts and memorandum of understanding. Our practice ensures that every transaction is executed with statutory precision and creates a robust legal foundation for our clients.",
     },
     {
       name: "Financial Services Regulation",
-      description: "Compliance and regulatory matters for financial institutions and regulated entities.",
+      description: "Our firm is at the forefront of the evolving financial technology and banking regulatory space in Nigeria. We assist financial institutions and fintech innovators in navigating licensing requirements set by the Central Bank of Nigeria, including AML compliance, data protection standards, and NOTAP registrations. By offering a proactive approach to regulatory changes, we ensure our clients remain compliant in a high-pressure oversight environment.",
     },
     {
       name: "Estate Administration & Probate",
-      description: "Efficient management and distribution of estates with careful attention to detail.",
+      description: "We offer a sensitive and disciplined approach to the management of private wealth and the orderly devolution of estates. Our services encompass the entire lifecycle of estate planning, including drafting of testamentary instruments and establishment of family trusts designed to preserve assets across generations. In the administrative phase, we navigate the complexities of the Probate Registry to secure Letters of Administration or Grants of Probate with efficiency.",
     },
     {
       name: "Legal Advisory Services",
-      description: "Tailored legal advice across sectors and industries based on deep expertise.",
+      description: "The firm has a legal advisory arm that serves as general counsel for clients requiring strategic guidance on day-to-day operations. We provide legal opinions, predictive analysis on legislative trends and their potential impact on client portfolios. Our advisory work is grounded in exhaustive research and a multi-tiered vetting process, ensuring that every memorandum or risk assessment is properly tested for accuracy.",
     },
     {
       name: "Property & Real Estate Law",
-      description: "Handling complex transactions and disputes in the real estate sector.",
+      description: "The firm maintains a premier property practice focused on the engineering of secure land transactions and the perfection of titles. We handle the complexities of property transactions, specializing in the drafting and registration of Deeds of Assignment, Leases, Legal Mortgages amongst others. Our team conducts rigorous due diligence to verify root of title and resolve historical encumbrances, ensuring real estate investments are fortified against future litigation.",
     },
     {
       name: "Arbitration & Alternative Dispute Resolution",
-      description: "Expertise in resolving disputes through arbitration, mediation, and negotiation.",
+      description: "Our firm recognizes the value of time and commercial confidentiality; our ADR practice offers a sophisticated alternative to litigation. We represent clients in arbitration, mediation, and negotiation proceedings, focusing on swift resolution of commercial disputes without protracted timelines. Our practitioners are skilled in the art of strategic compromise, leveraging technical strengths to reach settlements that protect our clients' interests.",
     },
     {
       name: "Intellectual Property Law",
-      description: "Protection of trademarks, copyrights, patents, and other IP assets.",
+      description: "The firm safeguards the intangible assets that drive modern commerce, including trademarks, patents, and copyrights. Our IP practice is dedicated to the registration and enforcement of intellectual property rights, ensuring our clients' innovations and brand identities are protected from infringement. We advise on licensing agreements, franchising, and commercialization of creative works.",
     },
     {
       name: "Family Law",
-      description: "Representation in divorce, custody, inheritance, and family matters.",
+      description: "Our family law practice provides professional and discreet representation in matters involving matrimonial causes, child custody, and maintenance. We approach these high-stakes personal issues with a focus on achieving equitable outcomes through disciplined advocacy and negotiation. We handle complex divorce proceedings involving multi-jurisdictional assets and facilitate adoption processes with legal objectivity.",
     },
     {
       name: "Employment Law",
-      description: "Advisory on labor-related issues for both employers and employees.",
+      description: "Our firm advises employers and executives on the intricate legalities of the workplace. We draft robust employment contracts, manage termination and redundancy procedures, and ensure compliance with the Labour Act and National Industrial Court decisions. We provide guidance on workplace policies, trade union relations, and employee benefits to mitigate risks of industrial action or wrongful dismissal claims.",
     },
     {
       name: "Insolvency & Debt Recovery",
-      description: "Recovery of debts and strategic advising on insolvency matters.",
+      description: "Our firm's insolvency practice is designed to manage the recovery of distressed assets and restructuring of debt obligations for both creditors and debtors. We utilize aggressive demand strategies and formal insolvency proceedings, including receiverships and liquidations, to maximize recovery. We are experts in enforcement of judgment debts and activation of security interests, ensuring creditors can recover capital with minimal slippage.",
     },
     {
       name: "Maritime & Shipping Law",
-      description: "Handling admiralty claims and disputes in the maritime sector.",
+      description: "We provide specialized legal support to the maritime sector, navigating the complex regulatory environment of Nigerian admiralty jurisdiction. Our services include advising on ship financing, vessel registration, and resolution of maritime liens and cargo claims. We assist clients in complying with the Cabotage Act and NIMASA regulations, handling collision disputes and drafting charter party agreements.",
     },
   ]
 
@@ -96,14 +96,14 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="space-y-8">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="p-8 bg-muted/30 border border-border rounded-lg hover:border-accent/50 transition-colors group"
               >
-                <h3 className="text-xl font-light mb-3 group-hover:text-accent transition-colors">{service.name}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-light mb-4 group-hover:text-accent transition-colors">{service.name}</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">{service.description}</p>
               </div>
             ))}
           </div>
