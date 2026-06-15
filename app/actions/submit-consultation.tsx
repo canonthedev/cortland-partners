@@ -169,7 +169,7 @@ async function sendConsultationEmails(formData: {
       <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
       <p style="font-size: 12px; color: #666;">
         <strong>Cortland Partners</strong><br>
-        17, Ishola Street, Off Herbert Macaulay way<br>
+        "75 Iwaya Road, Onike<br>
         Yaba, Lagos, Nigeria<br>
         Email: info@cortlandpartnersng.com
       </p>
