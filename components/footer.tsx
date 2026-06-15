@@ -39,22 +39,27 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-sm font-medium tracking-wide mb-4">Contact</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
+              <li className="text-sm text-muted-foreground flex items-start gap-2">
+                <MapPin size={16} className="mt-0.5 flex-shrink-0" />
+                <span>75 Iwaya Road, Onike, Yaba, Lagos State</span>
+              </li>
               <li className="text-sm text-muted-foreground flex items-center gap-2">
                 <Phone size={16} />
-                <a href="tel:+234814794085" className="hover:text-foreground transition-colors">
-                  +234 814 794 0885
-                </a>
+                <div className="space-y-1">
+                  <a href="tel:+2348147940885" className="hover:text-foreground transition-colors block">
+                    +234 814 794 0885
+                  </a>
+                  <a href="tel:+2348165387065" className="hover:text-foreground transition-colors block">
+                    +234 816 538 7065
+                  </a>
+                </div>
               </li>
               <li className="text-sm text-muted-foreground flex items-center gap-2">
                 <Mail size={16} />
                 <a href="mailto:info@cortlandpartnersng.com" className="hover:text-foreground transition-colors">
                   info@cortlandpartnersng.com
                 </a>
-              </li>
-              <li className="text-sm text-muted-foreground flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5" />
-                <span>17 Ishola Street, Yaba, Lagos</span>
               </li>
             </ul>
           </div>
@@ -63,9 +68,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-medium tracking-wide mb-4">Business Hours</h4>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li>Monday - Friday: 9 AM - 6 PM</li>
-              <li>Saturday: 10 AM - 3 PM</li>
-              <li>Sunday: Closed</li>
+              <li>Monday - Friday: 9 AM - 5 PM</li>
             </ul>
           </div>
         </div>

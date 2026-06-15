@@ -51,7 +51,7 @@ export default function Contact() {
                   <MapPin size={24} className="text-accent flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Address</p>
-                    <p className="font-light">17 Ishola Street, Off Herbert Macaulay Way, Yaba, Lagos</p>
+                    <p className="font-light">75 Iwaya Road, Onike, Yaba, Lagos State</p>
                   </div>
                 </div>
               </div>
@@ -60,7 +60,7 @@ export default function Contact() {
               <div className="mt-12">
                 <h3 className="text-lg font-light mb-4">Location</h3>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.665694614949!2d3.3629480753805337!3d6.605171093394373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9cdc519a0001%3A0x5d5d5d5d5d5d5d5d!2s17%20Ishola%20St%2C%20Yaba%2C%20Lagos!5e0!3m2!1sen!2sng!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0165159859223!2d3.3646!3d6.5989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9d5e5e5e5e5f%3A0x5d5d5d5d5d5d5d5d!2s75%20Iwaya%20Road%2C%20Onike%2C%20Yaba%2C%20Lagos%20State!5e0!3m2!1sen!2sng!4v1700000000000"
                   width="100%"
                   height="350"
                   className="rounded-lg border border-border"
@@ -86,9 +86,8 @@ export default function Contact() {
             <div className="p-8 bg-background border border-border rounded-lg">
               <h3 className="text-lg font-light mb-4">Office Hours</h3>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>Monday - Friday: 9 AM - 6 PM</li>
-                <li>Saturday: 10 AM - 3 PM</li>
-                <li>Sunday: Closed</li>
+                <li>Monday - Friday: 9 AM - 5 PM</li>
+                <li>Saturday - Sunday: Closed</li>
               </ul>
             </div>
             <div className="p-8 bg-background border border-border rounded-lg">
