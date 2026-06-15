@@ -96,16 +96,28 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="p-8 bg-muted/30 border border-border rounded-lg hover:border-accent/50 transition-colors group"
+                className="p-6 bg-background border border-border rounded-lg hover:border-accent/50 hover:shadow-lg transition-all group"
               >
-                <h3 className="text-2xl font-light mb-4 group-hover:text-accent transition-colors">{service.name}</h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">{service.description}</p>
+                <h3 className="text-lg font-light mb-3 group-hover:text-accent transition-colors">{service.name}</h3>
               </div>
             ))}
+          </div>
+
+          {/* Detailed Descriptions */}
+          <div className="mt-24">
+            <h2 className="text-3xl font-light mb-12 text-center">Service Details</h2>
+            <div className="space-y-12">
+              {services.map((service, index) => (
+                <div key={index} className="pb-12 border-b border-border last:border-b-0">
+                  <h3 className="text-2xl font-light mb-4 text-accent">{service.name}</h3>
+                  <p className="text-muted-foreground leading-relaxed max-w-3xl">{service.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
