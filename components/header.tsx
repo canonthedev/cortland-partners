@@ -47,7 +47,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-300 relative group"
+              className="px-4 py-2 text-sm font-bold text-foreground hover:text-primary transition-all duration-300 relative group uppercase tracking-wider"
             >
               {link.label}
               <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
@@ -68,9 +68,9 @@ export default function Header() {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="px-6 py-2.5 bg-primary text-black text-sm font-bold rounded hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            className="px-6 py-2.5 bg-primary text-primary-foreground text-sm font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 tracking-wide"
           >
-            Get Help
+            CONTACT
           </Link>
         </div>
 
@@ -107,10 +107,10 @@ export default function Header() {
             </button>
             <Link
               href="/contact"
-              className="px-6 py-3 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 text-center mt-2"
+              className="px-6 py-3 bg-primary text-primary-foreground text-sm font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 text-center mt-2 tracking-wide"
               onClick={() => setIsOpen(false)}
             >
-              Get Help
+              CONTACT
             </Link>
           </nav>
         </div>
