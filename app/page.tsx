@@ -29,48 +29,58 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-20 pb-32 px-6">
+      <section className="pt-28 pb-32 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-balance">
-                Law Firm in Lagos, Trusted Legal Services for Corporate and Property Law
-              </h1>
-              <p className="text-lg text-muted-foreground mb-2 font-medium">A full-service Nigerian law firm providing corporate, property, regulatory, and dispute resolution services.</p>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Cortland Partners is a full-service law firm headquartered in Lagos, Nigeria, providing strategic legal solutions across corporate, property, regulatory, and dispute resolution matters.
-              </p>
-              <div className="mb-6 p-6 bg-muted/30 rounded-lg border border-border">
-                <p className="text-sm font-medium mb-3">Why Trust Us</p>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>✔ Experienced Team of 15+ legal professionals</li>
-                  <li>✔ Expertise in corporate law, real estate and litigation</li>
-                  <li>✔ Cross border transaction experience</li>
-                  <li>✔ Trusted by Nigeria's Leading Corporations and Financial Institutions</li>
-                  <li>✔ Free Initial Legal Consultation</li>
-                </ul>
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <div className="inline-block px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
+                  <p className="text-sm font-semibold text-primary">Lagos-Based Legal Practice</p>
+                </div>
+                <h1 className="text-6xl md:text-7xl font-bold leading-tight text-balance text-foreground">
+                  Legal Excellence. <span className="text-primary">Modern Solutions.</span>
+                </h1>
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+                  Strategic legal guidance for corporate, property, regulatory and dispute resolution matters across Nigeria and Africa.
+                </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+
+              <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 border border-border rounded-lg hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
+                    <p className="text-2xl font-bold text-primary mb-1">15+</p>
+                    <p className="text-sm text-muted-foreground">Legal Professionals</p>
+                  </div>
+                  <div className="p-4 border border-border rounded-lg hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
+                    <p className="text-2xl font-bold text-primary mb-1">100+</p>
+                    <p className="text-sm text-muted-foreground">Client Matters</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-accent text-black font-medium rounded-sm hover:bg-accent/90 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 >
-                  Schedule a Consultation
+                  Schedule Consultation
                 </Link>
                 <a
                   href="tel:+2348147940885"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-border rounded-sm hover:bg-muted transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-primary/30 text-foreground font-semibold rounded-lg hover:border-primary hover:bg-primary/5 transition-all duration-300"
                 >
-                  Contact us (2348147940885)
+                  Call: +234 814 794 0885
                 </a>
               </div>
             </div>
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-accent/20 to-accent/5 rounded-lg overflow-hidden">
+            
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-primary to-primary/50 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+              <div className="relative w-full h-96 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-300">
                 <img
                   src="/images/nigerian-20legal-20practice.jpg"
-                  alt="Nigerian Supreme Court"
-                  className="w-full h-full object-cover rounded-lg border-2 border-accent"
+                  alt="Nigerian legal practice"
+                  className="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
             </div>
@@ -80,104 +90,114 @@ export default function Home() {
 
       {/* WHO WE ARE Section */}
       <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-light mb-6">Who We Are</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mb-4 leading-relaxed">
-            Cortland Partners is a full-service law firm headquartered in Lagos, Nigeria, providing strategic legal solutions across corporate, property, regulatory, and dispute resolution matters.
-          </p>
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground">Who We Are</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
+              Cortland Partners is a full-service law firm headquartered in Lagos, Nigeria, providing strategic legal solutions across corporate, property, regulatory, and dispute resolution matters.
+            </p>
+          </div>
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 text-accent hover:gap-4 transition-all font-medium"
+            className="inline-flex items-center gap-3 text-primary hover:gap-5 transition-all font-semibold text-lg hover:text-primary/80 group"
           >
-            Read More <ArrowRight size={18} />
+            Read More <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
       </section>
 
       {/* CAPABILITIES Section */}
-      <section className="py-24 px-6 bg-muted/30">
+      <section className="py-24 px-6 bg-secondary/50">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-4xl font-light mb-4">Our Capabilities</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
-              We offer comprehensive legal services across key practice areas to serve your unique needs.
+          <div className="mb-16 space-y-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground">Our Capabilities</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Comprehensive legal services across core practice areas designed to solve your most complex challenges.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service) => (
               <div
                 key={service}
-                className="flex items-start gap-3 p-6 bg-background rounded-lg border border-border hover:border-accent/50 transition-colors"
+                className="group p-6 bg-background rounded-xl border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
               >
-                <CheckCircle size={20} className="text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-medium mb-1 text-sm">{service}</h3>
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
+                    <CheckCircle size={20} className="text-primary group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{service}</h3>
                 </div>
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-accent hover:gap-4 transition-all font-medium"
+              className="inline-flex items-center gap-2 text-primary hover:gap-4 transition-all font-semibold text-lg hover:text-primary/80 group"
             >
-              View All Services <ArrowRight size={18} />
+              View All Services <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* MEET THE TEAM Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-light mb-8">Meet the Team</h2>
-          <div className="bg-background border border-border rounded-lg p-8 mb-8">
-            <h3 className="text-2xl font-light mb-3">Ibitayo Akinkuolie - Partner</h3>
-            <h4 className="text-accent font-medium text-sm mb-4">Profile</h4>
-            <p className="text-muted-foreground leading-relaxed mb-4">
+      <section className="py-24 px-6 bg-secondary/50">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground">Meet the Team</h2>
+          <div className="bg-background border border-border rounded-xl p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+            <div className="space-y-4 mb-6">
+              <h3 className="text-2xl font-bold text-foreground">Ibitayo Akinkuolie</h3>
+              <div className="inline-block px-3 py-1 bg-primary/10 rounded-lg">
+                <p className="text-sm font-semibold text-primary">Partner</p>
+              </div>
+            </div>
+            <p className="text-muted-foreground leading-relaxed mb-6">
               Ibitayo is a commercially astute lawyer with a strong focus on foreign investment, corporate advisory, and market entry strategy. He advises multinational corporations, investors, and high-growth businesses on establishing and structuring operations in Nigeria and across Africa, with particular emphasis on regulatory compliance, risk management, and commercial efficiency.
             </p>
             <Link
               href="/team"
-              className="inline-flex items-center gap-2 text-accent hover:gap-4 transition-all font-medium"
+              className="inline-flex items-center gap-3 text-primary hover:gap-5 transition-all font-semibold hover:text-primary/80 group"
             >
-              Read more <ArrowRight size={18} />
+              View Full Team <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* OUR SECTOR EXPERTISE Section */}
-      <section className="py-24 px-6 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-light mb-8">Our Sector Expertise</h2>
-          <ul className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl">
-            <li className="flex gap-3">
-              <CheckCircle size={20} className="text-accent flex-shrink-0 mt-0.5" />
-              <span>Advised on a USD 3 million foreign investment into Nigeria's real estate sector.</span>
-            </li>
-            <li className="flex gap-3">
-              <CheckCircle size={20} className="text-accent flex-shrink-0 mt-0.5" />
-              <span>Advised on acquisition of a Ghanaian cocoa licensing company valued at GHS 1.5 million.</span>
-            </li>
-            <li className="flex gap-3">
-              <CheckCircle size={20} className="text-accent flex-shrink-0 mt-0.5" />
-              <span>Represented financial institutions in debt recovery and security enforcement matters.</span>
-            </li>
-          </ul>
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground">Sector Expertise</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-8 bg-primary/5 border border-primary/20 rounded-xl hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group">
+              <CheckCircle size={24} className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <p className="text-muted-foreground leading-relaxed font-medium">USD 3M investment advisory for real estate sector in Nigeria</p>
+            </div>
+            <div className="p-8 bg-primary/5 border border-primary/20 rounded-xl hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group">
+              <CheckCircle size={24} className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <p className="text-muted-foreground leading-relaxed font-medium">Cross-border acquisition of GHS 1.5M Ghanaian cocoa licensing company</p>
+            </div>
+            <div className="p-8 bg-primary/5 border border-primary/20 rounded-xl hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group">
+              <CheckCircle size={24} className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <p className="text-muted-foreground leading-relaxed font-medium">Financial institution representation in debt recovery matters</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-light mb-6 text-balance">Need expert legal guidance in Lagos?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Cortland Partners NG offers a free initial consultation with experienced attorneys. We'll discuss your legal needs and provide professional advice tailored to your situation.
-          </p>
+      <section className="py-24 px-6 bg-primary/5 border-t-2 border-primary/20">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground text-balance">Ready to Get Started?</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Get expert legal guidance with a free consultation. Our experienced attorneys will discuss your needs and provide tailored advice.
+            </p>
+          </div>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 bg-accent text-black font-medium rounded-sm hover:bg-accent/90 transition-colors"
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg"
           >
             Request Free Consultation
           </Link>
