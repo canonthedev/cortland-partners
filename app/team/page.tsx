@@ -37,7 +37,7 @@ export default function Team() {
       name: "Adeyinka Binuyo",
       role: "Partner",
       bio: "Adeyinka has over a decade of experience in corporate law, dispute resolution, and regulatory compliance. He holds an LL.M. in International Commercial Law and an LL.B. from the University of Northampton, graduating with Second Class Upper Division Honors. He also holds a degree in Politics and International Relations from Lead City University, Ibadan.\n\nAdeyinka was called to the Nigerian Bar after completing the Nigerian Law School, Abuja. With experience at BA Law LLP and Kunle Fagbohunka & Co., he has successfully handled complex corporate matters, including commercial transactions, litigation, and regulatory compliance. He has worked extensively with businesses facing enforcement actions and has a strong track record of successfully negotiating settlements to reduce penalties.\n\nAdeyinka's ability to manage complex negotiations with regulatory bodies has earned him a reputation for delivering results while preserving client relationships.",
-      image: "/images/adeyinka.png",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-08%20at%2010.24.13-ihXz9IjdTWcX16PjmtFoVwdGBYuJEx.jpeg",
     },
   ]
 
