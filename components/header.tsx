@@ -68,7 +68,7 @@ export default function Header() {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="px-6 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            className="px-6 py-2.5 bg-primary text-black text-sm font-bold rounded hover:shadow-lg transition-all duration-300 transform hover:scale-105"
           >
             Get Help
           </Link>
