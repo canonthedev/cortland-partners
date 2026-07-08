@@ -46,59 +46,69 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-balance">About Cortland Partners NG – Law Firm in Lagos, Nigeria</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            Cortland Partners NG is a professional full-service law firm based in Lagos, Nigeria, dedicated to providing exceptional legal services to Nigeria's leading organizations, corporations, and individuals. With 15+ experienced legal professionals, we specialize in corporate law, real estate, litigation, and business advisory.
+      <section className="pt-32 pb-16 px-6 bg-secondary/50">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="inline-block px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
+            <p className="text-sm font-semibold text-primary">Full-Service Law Firm</p>
+          </div>
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight text-balance text-foreground">
+            About <span className="text-primary">Cortland Partners</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
+            A full-service law firm in Lagos with 15+ experienced legal professionals specializing in corporate law, real estate, litigation, and business advisory.
           </p>
         </div>
       </section>
 
       {/* Who We Are */}
-      <section className="py-24 px-6 border-t border-border">
+      <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
-            <div>
-              <h2 className="text-4xl font-light mb-8">Who We Are</h2>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <div className="space-y-6">
+              <h2 className="text-5xl md:text-6xl font-bold text-foreground">Our Story</h2>
+              <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
                 <p>
-                  Cortland Partners is an emerging full service law firm with its headquarters in Lagos State, Nigeria, comprising over fifteen (15) seasoned lawyers with in-depth knowledge spanning across diverse legal disciplines. The firm was established to address demanding and sophisticated legal requirements across sectors. We operate with a focus on delivering precise, statutory-led solutions across diverse fields spanning real estate, secured credit transactions, litigation, finance and corporate regulatory compliance, amongst others.
+                  Cortland Partners is an emerging full service law firm with its headquarters in Lagos State, Nigeria, comprising over fifteen (15) seasoned lawyers with in-depth knowledge spanning across diverse legal disciplines. The firm was established to address demanding and sophisticated legal requirements across sectors.
                 </p>
                 <p>
-                  Our identity is defined by a commitment to structural rigor, where legal advisory is treated as a critical component of a client's commercial infrastructure. We prioritize the mitigation of long-term risk through meticulous drafting and a deep-seated mastery of the procedural frameworks, laws and governing regulatory bodies.
+                  Our identity is defined by a commitment to structural rigor, where legal advisory is treated as a critical component of a client's commercial infrastructure. We prioritize the mitigation of long-term risk through meticulous drafting and a deep-seated mastery of the procedural frameworks.
                 </p>
                 <p>
-                  The firm's operational philosophy is centered on the pursuit of technical excellence and a rejection of professional stagnation. We maintain a high-pressure work environment designed to ensure that every brief is handled with a sense of urgency and analytical depth. At Cortland Partners, we act as strategic partners dedicated to the fortification of our clients' assets and the seamless navigation of complex jurisdictional requirements.
+                  We maintain a high-pressure work environment designed to ensure that every brief is handled with a sense of urgency and analytical depth. At Cortland Partners, we act as strategic partners dedicated to the fortification of our clients' assets.
                 </p>
               </div>
             </div>
-            <div className="relative h-96 rounded-lg overflow-hidden border border-border">
-              <img
-                src="/images/nigerian-20legal-20practice.jpg"
-                alt="Legal Practice"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-primary to-primary/50 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+              <div className="relative h-96 rounded-2xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-300">
+                <img
+                  src="/images/nigerian-20legal-20practice.jpg"
+                  alt="Legal Practice"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-24 px-6 bg-muted/30">
+      <section className="py-24 px-6 bg-primary/5 border-t border-primary/20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-light mb-12">Our Commitment</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-16 text-foreground">Our Commitment</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {values.map((value, index) => {
               const Icon = value.icon
               return (
                 <div
                   key={index}
-                  className="p-8 bg-background border border-border rounded-lg hover:border-accent/50 transition-colors"
+                  className="p-8 bg-background border border-border rounded-xl hover:border-primary/50 hover:bg-primary/5 hover:shadow-lg transition-all duration-300 group"
                 >
-                  <Icon size={32} className="text-accent mb-4" />
-                  <h3 className="text-xl font-light mb-3">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center mb-6 transition-colors duration-300">
+                    <Icon size={24} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">{value.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                 </div>
               )
             })}
@@ -109,24 +119,24 @@ export default function About() {
       {/* Why Choose Us */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-light mb-12">Why Choose Cortland Partners NG?</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-16 text-foreground">Why Choose Us</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 bg-muted/30 border border-border rounded-lg">
-              <h3 className="text-xl font-light mb-4">Experience & Expertise</h3>
+            <div className="p-8 bg-primary/5 border border-primary/20 rounded-xl hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group">
+              <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">Experience & Expertise</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Our team includes seasoned lawyers with deep expertise in corporate law, real estate, litigation, and regulatory compliance. We serve Nigeria's leading corporations and financial institutions.
+                Our team includes seasoned lawyers with deep expertise in corporate law, real estate, litigation, and regulatory compliance. We serve Nigeria's leading corporations.
               </p>
             </div>
-            <div className="p-8 bg-muted/30 border border-border rounded-lg">
-              <h3 className="text-xl font-light mb-4">Client-Focused Approach</h3>
+            <div className="p-8 bg-primary/5 border border-primary/20 rounded-xl hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group">
+              <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">Client-Focused Approach</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We listen carefully to understand your needs and provide tailored legal solutions. Regular communication and transparency are at the core of how we work with our clients.
+                We listen carefully to understand your needs and provide tailored legal solutions. Regular communication and transparency are core to our practice.
               </p>
             </div>
-            <div className="p-8 bg-muted/30 border border-border rounded-lg">
-              <h3 className="text-xl font-light mb-4">Results-Driven Service</h3>
+            <div className="p-8 bg-primary/5 border border-primary/20 rounded-xl hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group">
+              <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">Results-Driven Service</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We're committed to delivering practical, strategic legal advice that protects your interests and achieves your goals. Your success is our success.
+                We're committed to delivering practical, strategic legal advice that protects your interests and achieves your goals. Your success is ours.
               </p>
             </div>
           </div>
@@ -134,17 +144,19 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-light mb-6">Ready to work with experienced lawyers in Lagos?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Contact Cortland Partners NG today for a free consultation. We'll discuss your legal needs and how we can help achieve your goals.
-          </p>
+      <section className="py-24 px-6 bg-primary/5 border-t border-primary/20">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground text-balance">Ready to Work With Us?</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Contact Cortland Partners NG today for a free consultation. We'll discuss your legal needs and how we can help achieve your goals.
+            </p>
+          </div>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 bg-accent text-black font-medium rounded-sm hover:bg-accent/90 transition-colors"
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg"
           >
-            Schedule a Free Consultation
+            Schedule Free Consultation
           </Link>
         </div>
       </section>
