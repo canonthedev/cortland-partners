@@ -74,21 +74,16 @@ export default function Services() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-balance">Legal Services in Lagos – Corporate Law, Real Estate & Litigation</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            Cortland Partners NG provides comprehensive legal services across corporate law, real estate, litigation, and business advisory. Our experienced lawyers in Lagos serve individual clients, corporations, and financial institutions with tailored legal solutions.
-          </p>
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="py-24 px-6 border-t border-border bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-light mb-6">Expert Legal Solutions Across Multiple Practice Areas</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mb-8 leading-relaxed">
-            At Cortland Partners NG, we understand that every client's legal needs are unique. Whether you're facing a complex corporate transaction, property dispute, or need litigation support, our team of skilled attorneys brings years of experience and proven expertise. We're committed to providing practical, strategic legal advice that protects your interests and achieves your goals.
+      <section className="pt-32 pb-16 px-6 bg-secondary/50">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="inline-block px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
+            <p className="text-sm font-semibold text-primary">Comprehensive Legal Services</p>
+          </div>
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight text-balance text-foreground">
+            Legal Services That <span className="text-primary">Drive Results</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
+            From corporate transactions to complex litigation, our experienced lawyers in Lagos deliver practical, strategic legal solutions tailored to your unique needs.
           </p>
         </div>
       </section>
@@ -96,29 +91,52 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          {/* Quick Cards Grid */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-light mb-8">Our Services</h2>
+          {/* Quick Service Cards */}
+          <div className="mb-24">
+            <h2 className="text-4xl font-bold mb-12">Our Practice Areas</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="p-6 bg-background border border-border rounded-lg hover:border-accent/50 transition-colors group"
+                  className="group p-8 bg-background border border-border rounded-xl hover:border-primary/50 hover:bg-primary/5 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
                 >
-                  <h3 className="text-lg font-light group-hover:text-accent transition-colors">{service.name}</h3>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors duration-300">
+                      <div className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Detailed Descriptions */}
-          <div className="mt-24">
-            <h2 className="text-3xl font-light mb-12 text-center">Service Details</h2>
-            <div className="space-y-12">
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-12">
+            <h2 className="text-4xl font-bold mb-16 text-center">Service Details</h2>
+            <div className="space-y-16">
               {services.map((service, index) => (
-                <div key={`detail-${index}`} className="pb-12 border-b border-border last:border-b-0">
-                  <h3 className="text-2xl font-light mb-4 text-accent">{service.name}</h3>
-                  <p className="text-muted-foreground leading-relaxed max-w-3xl">{service.description}</p>
+                <div
+                  key={`detail-${index}`}
+                  className="pb-16 border-b border-primary/10 last:border-b-0 group"
+                >
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                        <span className="text-sm font-bold text-primary">{index + 1}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                      {service.name}
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed max-w-3xl text-lg">
+                    {service.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -127,17 +145,21 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-light mb-6">Which service is right for you?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Every legal matter is unique. Our experienced attorneys at Cortland Partners NG will work with you to understand your situation and provide tailored legal advice. Contact us today for a free initial consultation with one of our lawyers in Lagos.
-          </p>
+      <section className="py-24 px-6">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground text-balance">
+              Let&apos;s Solve Your Legal Challenge
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Every legal matter is unique. Our experienced attorneys will work with you to understand your situation and provide tailored solutions.
+            </p>
+          </div>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 bg-accent text-black font-medium rounded-sm hover:bg-accent/90 transition-colors"
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg"
           >
-            Schedule Your Free Consultation <ArrowRight size={18} className="ml-2" />
+            Schedule Free Consultation <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>
