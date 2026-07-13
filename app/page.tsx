@@ -11,11 +11,11 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
-            src="/images/hero-luxury.png"
-            alt="Luxury law firm"
+            src="/images/hero-scales-of-justice.jpg"
+            alt="Scales of Justice - Legal Excellence"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
         {/* Content */}
