@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen md:h-screen flex items-center justify-center overflow-hidden py-16 md:py-0">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
@@ -19,41 +19,41 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-8">
-          <div className="space-y-6">
-            <h1 className="text-6xl md:text-7xl font-bold leading-tight text-foreground">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center space-y-6 md:space-y-8">
+          <div className="space-y-4 md:space-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
               Strategic Legal Excellence for Nigeria&apos;s Leading Businesses
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 font-light">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light">
               Corporate law, Property & Real Estate, Litigation & Dispute Resolution, and Regulatory Services in Lagos
             </p>
           </div>
 
           {/* Trust Bar */}
-          <div className="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-400 pt-6 border-t border-primary/30">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm font-medium text-gray-400 pt-4 md:pt-6 border-t border-primary/30">
             <div className="flex items-center gap-2">
-              <span className="text-primary">●</span> 15+ Legal Professionals
+              <span className="text-primary">●</span> <span>15+ Legal Professionals</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-primary">●</span> Lagos-Based
+              <span className="text-primary">●</span> <span>Lagos-Based</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-primary">●</span> Client-Focused Excellence
+              <span className="text-primary">●</span> <span>Client-Focused Excellence</span>
             </div>
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex flex-col gap-3 md:gap-4 justify-center pt-3 md:pt-4">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-primary text-primary-foreground font-bold text-sm md:text-base hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
             >
               EXPLORE PRACTICE AREAS
-              <ArrowRight size={20} className="ml-2" />
+              <ArrowRight size={16} className="ml-2 md:w-5 md:h-5" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-bold hover:bg-primary/10 transition-all duration-300"
+              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-primary text-primary font-bold text-sm md:text-base hover:bg-primary/10 transition-all duration-300 w-full md:w-auto"
             >
               SCHEDULE CONSULTATION
             </Link>
@@ -62,39 +62,39 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-24 px-6 bg-secondary">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="space-y-6 order-2 md:order-1">
               <div className="space-y-2">
-                <p className="text-primary font-bold text-sm tracking-widest">WHO WE ARE</p>
-                <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+                <p className="text-primary font-bold text-xs md:text-sm tracking-widest">WHO WE ARE</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   International Standards. Local Expertise.
                 </h2>
               </div>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Cortland Partners is a full-service law firm headquartered in Lagos, Nigeria. We combine international best practices with deep local market knowledge to deliver strategic legal solutions across corporate, property, regulatory, and dispute resolution matters.
               </p>
-              <div className="grid grid-cols-3 gap-6 pt-8">
-                <div className="space-y-2">
-                  <p className="text-3xl font-bold text-primary">15+</p>
-                  <p className="text-sm text-muted-foreground">Legal Professionals</p>
+              <div className="grid grid-cols-3 gap-4 md:gap-6 pt-4 md:pt-8">
+                <div className="space-y-1 md:space-y-2">
+                  <p className="text-2xl md:text-3xl font-bold text-primary">15+</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Legal Professionals</p>
                 </div>
-                <div className="space-y-2">
-                  <p className="text-3xl font-bold text-primary">100+</p>
-                  <p className="text-sm text-muted-foreground">Successful Transactions</p>
+                <div className="space-y-1 md:space-y-2">
+                  <p className="text-2xl md:text-3xl font-bold text-primary">100+</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Successful Transactions</p>
                 </div>
-                <div className="space-y-2">
-                  <p className="text-3xl font-bold text-primary">6+</p>
-                  <p className="text-sm text-muted-foreground">Practice Areas</p>
+                <div className="space-y-1 md:space-y-2">
+                  <p className="text-2xl md:text-3xl font-bold text-primary">6+</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Practice Areas</p>
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative order-1 md:order-2">
               <img
                 src="/images/who-we-are-boardroom.jpg"
                 alt="Professional boardroom - Cortland Partners"
-                className="w-full h-96 object-cover border-4 border-primary/30"
+                className="w-full h-48 md:h-96 object-cover border-4 border-primary/30"
               />
               <div className="absolute inset-0 border border-primary/20 pointer-events-none"></div>
             </div>
@@ -103,17 +103,17 @@ export default function Home() {
       </section>
 
       {/* Practice Areas Section */}
-      <section className="py-24 px-6 bg-background">
-        <div className="max-w-6xl mx-auto space-y-16">
-          <div className="space-y-4 text-center">
-            <p className="text-primary font-bold text-sm tracking-widest">OUR EXPERTISE</p>
-            <h2 className="text-5xl md:text-6xl font-bold">Practice Areas</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-background">
+        <div className="max-w-6xl mx-auto space-y-12 md:space-y-16">
+          <div className="space-y-3 md:space-y-4 text-center">
+            <p className="text-primary font-bold text-xs md:text-sm tracking-widest">OUR EXPERTISE</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Practice Areas</h2>
+            <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Comprehensive legal solutions across core practice areas designed to solve your most complex business challenges
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
               { title: 'Corporate & Commercial Law', desc: 'Mergers & acquisitions, corporate advisory, commercial transactions' },
               { title: 'Property & Real Estate', desc: 'Property transactions, real estate development, conveyancing' },
@@ -125,52 +125,52 @@ export default function Home() {
               <Link
                 key={area.title}
                 href="/services"
-                className="group p-8 bg-card border border-border hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 space-y-4"
+                className="group p-6 md:p-8 bg-card border border-border hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 space-y-4"
               >
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300 leading-tight">
                     {area.title}
                   </h3>
-                  <ArrowRight size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2" />
+                  <ArrowRight size={18} className="text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-2 flex-shrink-0" />
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">{area.desc}</p>
+                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{area.desc}</p>
               </Link>
             ))}
           </div>
 
-          <div className="text-center pt-8">
+          <div className="text-center pt-4 md:pt-8">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all hover:text-primary/80"
+              className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all hover:text-primary/80 text-sm md:text-base"
             >
               VIEW ALL PRACTICE AREAS
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Differentiators Section */}
-      <section className="py-24 px-6 bg-secondary">
-        <div className="max-w-6xl mx-auto space-y-16">
-          <div className="space-y-4 text-center">
-            <p className="text-primary font-bold text-sm tracking-widest">OUR APPROACH</p>
-            <h2 className="text-5xl md:text-6xl font-bold">Why Choose Cortland Partners</h2>
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary">
+        <div className="max-w-6xl mx-auto space-y-12 md:space-y-16">
+          <div className="space-y-3 md:space-y-4 text-center">
+            <p className="text-primary font-bold text-xs md:text-sm tracking-widest">OUR APPROACH</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Why Choose Cortland Partners</h2>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {[
               { icon: Award, title: 'Deep Local Knowledge', desc: 'Intimate understanding of Nigerian legal landscape' },
               { icon: Users, title: 'Multidisciplinary Team', desc: 'Experts across all practice areas, seamless collaboration' },
               { icon: Zap, title: 'Client-Centric Solutions', desc: 'Strategic approach tailored to your specific objectives' },
               { icon: CheckCircle2, title: 'Proven Results', desc: 'Track record of successful complex transactions' }
             ].map(({ icon: Icon, title, desc }, idx) => (
-              <div key={idx} className="group p-8 bg-background border border-primary/30 hover:border-primary transition-all duration-300 text-center space-y-4">
+              <div key={idx} className="group p-6 md:p-8 bg-background border border-primary/30 hover:border-primary transition-all duration-300 text-center space-y-3 md:space-y-4">
                 <div className="flex justify-center">
-                  <Icon size={32} className="text-primary group-hover:scale-110 transition-transform duration-300" />
+                  <Icon size={28} className="text-primary group-hover:scale-110 transition-transform duration-300 md:w-8 md:h-8" />
                 </div>
-                <h3 className="text-lg font-bold">{title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                <h3 className="text-base md:text-lg font-bold leading-tight">{title}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -178,14 +178,14 @@ export default function Home() {
       </section>
 
       {/* Notable Transactions Section */}
-      <section className="py-24 px-6 bg-background">
-        <div className="max-w-6xl mx-auto space-y-16">
-          <div className="space-y-4 text-center">
-            <p className="text-primary font-bold text-sm tracking-widest">EXPERTISE IN ACTION</p>
-            <h2 className="text-5xl md:text-6xl font-bold">Notable Transactions</h2>
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-background">
+        <div className="max-w-6xl mx-auto space-y-12 md:space-y-16">
+          <div className="space-y-3 md:space-y-4 text-center">
+            <p className="text-primary font-bold text-xs md:text-sm tracking-widest">EXPERTISE IN ACTION</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Notable Transactions</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
               'USD 3M investment advisory for real estate sector in Nigeria',
               'Cross-border acquisition of GHS 1.5M Ghanaian cocoa licensing company',
@@ -194,9 +194,9 @@ export default function Home() {
               'Regulatory compliance and licensing for fintech ventures',
               'Property development legal advisory for major projects'
             ].map((transaction, idx) => (
-              <div key={idx} className="p-8 bg-card border border-primary/30 hover:border-primary transition-all duration-300 space-y-4">
-                <CheckCircle2 size={28} className="text-primary" />
-                <p className="text-base leading-relaxed">{transaction}</p>
+              <div key={idx} className="p-6 md:p-8 bg-card border border-primary/30 hover:border-primary transition-all duration-300 space-y-4">
+                <CheckCircle2 size={24} className="text-primary md:w-7 md:h-7" />
+                <p className="text-sm md:text-base leading-relaxed">{transaction}</p>
               </div>
             ))}
           </div>
@@ -204,8 +204,8 @@ export default function Home() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 px-6 bg-secondary">
-        <div className="max-w-6xl mx-auto space-y-12">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary">
+        <div className="max-w-6xl mx-auto space-y-8 md:space-y-12">
           <div className="relative">
             <img
               src="/images/meet-the-partners.jpg"
@@ -217,30 +217,30 @@ export default function Home() {
           <div className="text-center">
             <Link
               href="/team"
-              className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all text-lg"
+              className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all text-base md:text-lg"
             >
               VIEW FULL TEAM DETAILS
-              <ArrowRight size={20} />
+              <ArrowRight size={18} className="md:w-5 md:h-5" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-background border-y border-primary/30">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <h2 className="text-5xl md:text-6xl font-bold">Ready to Work With Us?</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-background border-y border-primary/30">
+        <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+          <div className="space-y-3 md:space-y-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Ready to Work With Us?</h2>
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
               Get expert legal guidance with a free consultation. Our experienced attorneys will discuss your needs and provide tailored strategic advice.
             </p>
           </div>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-12 py-5 bg-primary text-primary-foreground font-bold text-lg hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center justify-center px-8 md:px-12 py-3 md:py-5 bg-primary text-primary-foreground font-bold text-base md:text-lg hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
           >
             SCHEDULE CONSULTATION
-            <ArrowRight size={20} className="ml-2" />
+            <ArrowRight size={18} className="ml-2 md:w-5 md:h-5" />
           </Link>
         </div>
       </section>
