@@ -44,8 +44,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+    <html lang="en" suppressHydrationWarning className="bg-background">
+      <body className={`${geistSans.className} antialiased bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Header />
           <main className="pt-20">{children}</main>
