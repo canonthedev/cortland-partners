@@ -92,8 +92,8 @@ export default function Home() {
             </div>
             <div className="relative">
               <img
-                src="/images/team-meeting.png"
-                alt="Cortland Partners team"
+                src="/images/who-we-are-boardroom.jpg"
+                alt="Professional boardroom - Cortland Partners"
                 className="w-full h-96 object-cover border-4 border-primary/30"
               />
               <div className="absolute inset-0 border border-primary/20 pointer-events-none"></div>
