@@ -45,6 +45,12 @@ export default function Team() {
       bio: "Oluwatomilade is a newly called Nigerian lawyer whose experience spans corporate and commercial transactions, dispute resolution, legal research, regulatory compliance, and policy development. Through internships and practical legal training, she has developed a strong foundation in providing legal support across both transactional and contentious matters while working with leading law firms and the courts.\n\nBeyond her legal practice experience, Oluwatomilade has demonstrated strong leadership and advocacy through national and international extracurricular engagements. She was a member of the winning team at the 2024 Philip C. Jessup International Law Moot Court Competition (Nigerian National Rounds), where she strengthened her legal research, written advocacy, and oral advocacy skills. She has also served in leadership roles at the Lagos Model United Nations, including Chair of the International Labour Organization Committee and Vice Chair of the General Assembly Second Committee, where she facilitated committee sessions, guided delegates through complex international policy discussions, and produced comprehensive research materials.\n\nThese experiences have equipped her with strong analytical, drafting, advocacy, and problem-solving skills, as well as the ability to work effectively in collaborative, fast-paced legal environments. She is committed to delivering practical legal solutions while continuing to develop expertise across diverse areas of legal practice.",
       image: "/images/oluwatomilade.jpg",
     },
+    {
+      name: "Rachael Michael",
+      role: "Senior Associate",
+      bio: "Rachael is a dedicated legal professional with comprehensive experience in corporate law, transactional matters, and business advisory. She brings strategic thinking and meticulous attention to detail to every matter she handles, ensuring clients receive practical and effective legal solutions.\n\nWith a strong track record of managing complex commercial transactions and regulatory matters, Rachael is committed to delivering excellence across diverse areas of legal practice. Her proactive approach and collaborative working style make her a valuable asset to the Cortland Partners team.",
+      image: "/images/rachael-michael.jpg",
+    },
   ]
 
   return (

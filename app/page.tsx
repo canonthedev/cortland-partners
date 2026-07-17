@@ -205,54 +205,21 @@ export default function Home() {
 
       {/* Team Section */}
       <section className="py-24 px-6 bg-secondary">
-        <div className="max-w-6xl mx-auto space-y-16">
-          <div className="space-y-4 text-center">
-            <p className="text-primary font-bold text-sm tracking-widest">OUR TEAM</p>
-            <h2 className="text-5xl md:text-6xl font-bold">Meet the Partners</h2>
-          </div>
-
+        <div className="max-w-6xl mx-auto space-y-12">
           <div className="relative">
             <img
-              src="/images/team-meeting.png"
-              alt="Cortland Partners team"
-              className="w-full h-96 object-cover border-4 border-primary/30 mb-12"
+              src="/images/meet-the-partners.jpg"
+              alt="Meet the Partners - Cortland Partners Team"
+              className="w-full h-auto object-contain"
             />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                name: 'Ibitayo Akinkuolie',
-                role: 'Partner',
-                bio: 'Commercially astute lawyer with strong focus on foreign investment, corporate advisory, and market entry strategy.'
-              },
-              {
-                name: 'Adeyinka Binuyo',
-                role: 'Partner',
-                bio: 'Over a decade of experience in corporate law, dispute resolution, and regulatory compliance across Africa.'
-              }
-            ].map((partner) => (
-              <Link
-                key={partner.name}
-                href="/team"
-                className="group p-8 bg-background border border-primary/30 hover:border-primary transition-all duration-300 space-y-4"
-              >
-                <p className="text-primary font-bold text-xs tracking-widest">{partner.role}</p>
-                <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">{partner.name}</h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">{partner.bio}</p>
-                <div className="pt-4 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
-                  VIEW PROFILE <ArrowRight size={16} />
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center pt-8">
+          <div className="text-center">
             <Link
               href="/team"
-              className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all"
+              className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all text-lg"
             >
-              VIEW FULL TEAM
+              VIEW FULL TEAM DETAILS
               <ArrowRight size={20} />
             </Link>
           </div>
