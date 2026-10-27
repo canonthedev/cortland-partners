@@ -2,17 +2,29 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { submitConsultation } from "@/app/actions/submit-consultation"
+import { submitConsultation, getFormToken } from "@/app/actions/submit-consultation"
 import { useToast } from "@/hooks/use-toast"
 
-interface ConsultationFormProps {
-  darkMode: boolean
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (el: HTMLElement, opts: Record<string, unknown>) => string
+      reset: (id?: string) => void
+    }
+  }
 }
 
-export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+
+interface ConsultationFormProps {
+  darkMode?: boolean
+}
+
+export default function ConsultationForm({ darkMode = true }: ConsultationFormProps) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -23,7 +35,31 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
     website: "", // Honeypot field - bots will fill this
   })
   const [isLoading, setIsLoading] = useState(false)
+  const [formToken, setFormToken] = useState("")
+  const [turnstileToken, setTurnstileToken] = useState("")
+  const turnstileRef = useRef<HTMLDivElement>(null)
+  const widgetId = useRef<string | undefined>(undefined)
   const { toast } = useToast()
+
+  const refreshToken = () => getFormToken().then(setFormToken).catch(() => {})
+
+  useEffect(() => {
+    refreshToken()
+  }, [])
+
+  const renderTurnstile = () => {
+    if (!TURNSTILE_SITE_KEY || !window.turnstile || !turnstileRef.current || widgetId.current) return
+    widgetId.current = window.turnstile.render(turnstileRef.current, {
+      sitekey: TURNSTILE_SITE_KEY,
+      theme: darkMode ? "dark" : "light",
+      callback: (t: string) => setTurnstileToken(t),
+      "expired-callback": () => setTurnstileToken(""),
+    })
+  }
+
+  useEffect(() => {
+    renderTurnstile()
+  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -36,12 +72,10 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Bot protection: Check honeypot field
-    if (formData.website) {
-      console.log("[v0] Honeypot field filled - likely bot submission")
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
       toast({
-        title: "Error",
-        description: "Invalid form submission detected",
+        title: "Almost there",
+        description: "Please complete the security check.",
         variant: "destructive",
       })
       return
@@ -50,7 +84,7 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
     setIsLoading(true)
 
     try {
-      const result = await submitConsultation(formData)
+      const result = await submitConsultation({ ...formData, formToken, turnstileToken })
 
       if (result.success) {
         toast({
@@ -83,6 +117,10 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
       })
     } finally {
       setIsLoading(false)
+      // Each token is single-use from the user's point of view
+      setTurnstileToken("")
+      if (widgetId.current) window.turnstile?.reset(widgetId.current)
+      refreshToken()
     }
   }
 
@@ -102,17 +140,26 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Honeypot field - hidden from users but catches bots */}
-          <input
-            type="text"
-            name="website"
-            value={formData.website}
-            onChange={handleInputChange}
-            style={{ display: "none" }}
-            tabIndex={-1}
-            autoComplete="off"
-            aria-hidden="true"
-          />
+          {TURNSTILE_SITE_KEY && (
+            <Script
+              src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+              strategy="afterInteractive"
+              onLoad={renderTurnstile}
+            />
+          )}
+          {/* Honeypot field - moved off-screen (not display:none, which bots detect) */}
+          <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={formData.website}
+              onChange={handleInputChange}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label
@@ -127,6 +174,7 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
                 type="text"
                 id="firstName"
                 name="firstName"
+                maxLength={50}
                 value={formData.firstName}
                 onChange={handleInputChange}
                 className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-600 transition-colors duration-300 ${
@@ -151,6 +199,7 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
                 type="text"
                 id="lastName"
                 name="lastName"
+                maxLength={50}
                 value={formData.lastName}
                 onChange={handleInputChange}
                 className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-600 transition-colors duration-300 ${
@@ -265,13 +314,16 @@ export default function ConsultationForm({ darkMode }: ConsultationFormProps) {
                   : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
               }`}
               placeholder="Please provide details about your legal matter..."
+              minLength={20}
+              maxLength={3000}
               required
             ></textarea>
           </div>
+          {TURNSTILE_SITE_KEY && <div ref={turnstileRef} className="min-h-[65px]" />}
           <Button
             type="submit"
             className="w-full bg-yellow-600 hover:bg-yellow-700 text-black font-semibold"
-            disabled={isLoading}
+            disabled={isLoading || !formToken}
           >
             {isLoading ? "Submitting..." : "Request Consultation"}
           </Button>
